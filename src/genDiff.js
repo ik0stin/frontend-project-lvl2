@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { readFileSync } from 'fs';
+import path from 'path';
 
 const fileParse = (file) => JSON.parse(readFileSync(path.resolve(file), 'utf8'));
 
@@ -22,7 +23,7 @@ const genDiff = (file1, file2) => {
       result[`${operators[1]} ${key}`] = fileJson1[key];
       result[`${operators[0]} ${key}`] = fileJson2[key]
     } else if (!_.has(fileJson1, key) || _.has(fileJson2, key) ) {
-      result[`${operators[1]} ${key}`] = fileJson2[key]
+      result[`${operators[0]} ${key}`] = fileJson2[key]
     } else if (_.has(fileJson1, key) || !_.has(fileJson2, key) ) {
       result[`${operators[1]} ${key}`] = fileJson1[key]
     }
