@@ -28,7 +28,8 @@ const genDiff = (file1, file2) => {
       result[`${operators[1]} ${key}`] = fileJson1[key]
     }
   }
-  return JSON.stringify(result, null, 2);
+  result = JSON.stringify(result, null, 2);
+  return result.replace(/"/g, '');
 }
 
 export default genDiff;
