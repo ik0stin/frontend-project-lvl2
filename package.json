@@ -22,8 +22,9 @@
   "homepage": "https://github.com/ik0stin/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^8.3.0",
-    "lodash": "^4.17.21",
-    "jest": "^27.4.7"
+    "eslint-plugin-jest": "^25.7.0",
+    "jest": "^27.4.7",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.6.0",
