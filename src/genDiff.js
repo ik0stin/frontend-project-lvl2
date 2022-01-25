@@ -1,8 +1,11 @@
 import _ from 'lodash';
 import { readFileSync } from 'fs';
 import path from 'path';
+import parser from './parsers.js';
 
-const fileParse = (file) => JSON.parse(readFileSync(path.resolve(file), 'utf8'));
+// const fileParse = (file) => JSON.parse(readFileSync(path.resolve(file), 'utf8'));
+
+const fileParse = (file) => parser(readFileSync(path.resolve(file), 'utf8'));
 
 const operators = ['+', '-'];
 
