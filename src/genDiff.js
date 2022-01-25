@@ -3,8 +3,6 @@ import _ from 'lodash';
 // import path from 'path';
 import parser from './parsers.js';
 
-// const fileParse = (file) => JSON.parse(readFileSync(path.resolve(file), 'utf8'));
-
 const fileParse = (file) => parser(file);
 
 const operators = ['+', '-'];
