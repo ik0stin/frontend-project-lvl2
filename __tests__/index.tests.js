@@ -13,7 +13,13 @@ describe('check for correct diff', () => {
   it('compare files json', () => {
     expect(genDiff('file1.json', 'file2.json')).toEqual(readFile('expected_file.txt'));
   });
+  it('compare deep files json', () => {
+    expect(genDiff('file11.json', 'file22.json')).toEqual(readFile('expected_file_2.txt'));
+  });
   it('compare files yml', () => {
     expect(genDiff('file1.yml', 'file2.yml')).toEqual(readFile('expected_file.txt'));
+  });
+  it('compare deep files yml', () => {
+    expect(genDiff('file11.yml', 'file22.yml')).toEqual(readFile('expected_file_2.txt'));
   });
 });
