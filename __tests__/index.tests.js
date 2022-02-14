@@ -14,6 +14,8 @@ const tests = [
   ['file1.yml', 'file2.yml', 'expected_file_stylish.txt', 'stylish'],
   ['file1.json', 'file2.json', 'expected_file_plain.txt', 'plain'],
   ['file1.yml', 'file2.yml', 'expected_file_plain.txt', 'plain'],
+  ['file1.json', 'file2.json', 'expected_file_json.txt', 'json'],
+  ['file1.yml', 'file2.yml', 'expected_file_json.txt', 'json'],
 ];
 
 describe('check for correct diff', () => {

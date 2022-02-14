@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander/esm.mjs';
-import tree from '../src/index.js';
+import genDiff from '../src/tree.js';
 
 const program = new Command();
 
@@ -10,6 +10,6 @@ program
   .option('-f, --format [type]', 'output format', 'stylish')
   .arguments('<filepath1> <filepath2>')
   .action((filepath1, filepath2, { format }) => {
-    console.log(tree(filepath1, filepath2, format));
+    console.log(genDiff(filepath1, filepath2, format));
   });
 program.parse();
