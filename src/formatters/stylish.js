@@ -7,10 +7,7 @@ const stringify = (data, treeDepth) => {
   const lines = Object
     .entries(data)
     .map(([key, value]) => `${indent(treeDepth + 1)}  ${key}: ${stringify(value, treeDepth + 1)}`);
-  return [
-    '{',
-    ...lines,
-    `${indent(treeDepth)}  }`,
+  return ['{', ...lines, `${indent(treeDepth)}  }`,
   ].join('\n');
 };
 const stylish = (innerTree) => {
