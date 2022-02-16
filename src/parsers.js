@@ -1,4 +1,3 @@
-// import fs from 'fs';
 import yaml from 'js-yaml';
 
 export default (format, data) => {
@@ -7,7 +6,9 @@ export default (format, data) => {
       return JSON.parse(data);
     case 'yml':
       return yaml.load(data);
+    case 'yaml':
+      return yaml.load(data);
     default:
-      throw new Error(`Формат не поддерживается: ${format}`);
+      throw new Error(`Format not supported: ${format}`);
   }
 };

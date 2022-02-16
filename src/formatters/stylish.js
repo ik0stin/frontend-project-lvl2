@@ -7,8 +7,7 @@ const stringify = (data, treeDepth) => {
   const lines = Object
     .entries(data)
     .map(([key, value]) => `${indent(treeDepth + 1)}  ${key}: ${stringify(value, treeDepth + 1)}`);
-  return ['{', ...lines, `${indent(treeDepth)}  }`,
-  ].join('\n');
+  return ['{', ...lines, `${indent(treeDepth)}  }`].join('\n');
 };
 const stylish = (innerTree) => {
   const iter = (tree, depth) => tree.map((node) => {
@@ -26,7 +25,7 @@ const stylish = (innerTree) => {
         // eslint-disable-next-line max-len
         return `${indent(depth)}  ${node.key}: {\n${iter(node.children, depth + 1).join('')}${indent(depth)}  }\n`;
       default:
-        throw new Error(`Этого типа не существует: ${node.type}`);
+        throw new Error(`This type does not exist: ${node.type}`);
     }
   });
   return `{\n${iter(innerTree, 1).join('')}}`;

@@ -10,6 +10,6 @@ export default (innerTree, format) => {
     case 'json':
       return JSON.stringify(innerTree);
     default:
-      throw new Error(`Формат не поддерживается: ${format}`);
+      throw new Error(`Format not supported: ${format}`);
   }
 };
